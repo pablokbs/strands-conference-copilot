@@ -8,3 +8,7 @@ __pycache__/
 .env.*
 !.env.example
 *.db
+
+# Internal scratch (kept out of the public repo)
+.kimchi/
+.kimchi-prompts/

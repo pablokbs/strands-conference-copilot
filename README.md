@@ -120,6 +120,28 @@ Las siguientes etapas del workshop agregarán planificación personal sin
 superposiciones, notas persistentes, observabilidad y un bonus multi-agent.
 Se incorporarán al repositorio cuando tengan código y pruebas ejecutables.
 
+## Roadmap multi-conferencia
+
+El próximo adaptador incorporará la agenda de
+[KubeCon + CloudNativeCon North America 2026](https://kubecon-cloudnativecon-north-america-2026.sessionize.com/)
+para usarla en el video que acompaña al workshop.
+
+La aplicación web de Sessionize expone actualmente estos endpoints públicos
+sin autenticación:
+
+- `https://kubecon-cloudnativecon-north-america-2026.sessionize.com/api/schedule`
+- `https://kubecon-cloudnativecon-north-america-2026.sessionize.com/api/data`
+
+El endpoint de agenda contiene sesiones, speakers, categorías y salas. El
+adaptador deberá normalizar ese formato al mismo modelo interno que usa
+Nerdearla y guardar un snapshot local para funcionar sin conexión. Estos son
+endpoints internos de la PWA, no una API estable documentada, y no publican
+CORS para consumo directo desde otra aplicación web; por eso la descarga se
+hará desde Python y nunca directamente desde el navegador.
+
+La sesión `1244695` se usará como fixture de integración para verificar la
+relación entre sesión, speaker, categorías y sala.
+
 ## Referencias
 
 - [Strands samples](https://github.com/strands-agents/samples)
