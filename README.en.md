@@ -119,6 +119,28 @@ Future workshop stages will add conflict-free personal planning, persistent
 notes, observability, and a multi-agent bonus. They will be added once their
 code and tests are runnable.
 
+## Multi-conference roadmap
+
+The next adapter will add the
+[KubeCon + CloudNativeCon North America 2026](https://kubecon-cloudnativecon-north-america-2026.sessionize.com/)
+schedule for the video that accompanies the workshop.
+
+The Sessionize web application currently exposes these unauthenticated public
+endpoints:
+
+- `https://kubecon-cloudnativecon-north-america-2026.sessionize.com/api/schedule`
+- `https://kubecon-cloudnativecon-north-america-2026.sessionize.com/api/data`
+
+The schedule endpoint includes sessions, speakers, categories, and rooms. The
+adapter will normalize this format into the same internal model used for
+Nerdearla and save a local snapshot for offline use. These are internal PWA
+endpoints rather than a documented stable API, and they do not publish CORS
+headers for direct use from another web application. The data will therefore
+be fetched from Python, never directly from the browser.
+
+Session `1244695` will be used as an integration fixture to verify the session,
+speaker, category, and room relationships.
+
 ## References
 
 - [Strands samples](https://github.com/strands-agents/samples)
